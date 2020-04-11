@@ -70,7 +70,7 @@ module boussignac(
     }
 }
 
-boussignac(outer_diameter = 30, inner_diameter = 15, wall = 1, angle = 45, length = 10, channel = 0.4);
+mirror([0, 0, 1]) boussignac(outer_diameter = 30, inner_diameter = 15, wall = 1, angle = 45, length = 10, channel = 0.4);
 
 
 
