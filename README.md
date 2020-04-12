@@ -8,5 +8,6 @@
 * Support: only for the protruding tube.
 
 ## Bibliography
+* [http://vitaid.com/usa/boussignac/index.html](https://web.archive.org/web/20060212172040/http://vitaid.com/usa/boussignac/index.html)
 * http://scielo.isciii.es/pdf/medinte/v35n5/nota2.pdf
 * https://blog.vygon.es/origen-cpap-boussignac/
