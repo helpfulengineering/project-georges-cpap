@@ -1,7 +1,9 @@
-$fn=100;
+$fn=256;
 
 
 module tube(diameter, length, wall) {
+    slope = (diameter[0] == undef) ? 0 : abs(diameter[0] - diameter[1]) / 2;
+    secant = sqrt(pow(slope, 2) + pow(length, 2)) / length;
     difference() {
         cylinder(
             h=length,
@@ -10,8 +12,10 @@ module tube(diameter, length, wall) {
         );
         cylinder(
             h=length,
-            r1=((diameter[0] == undef) ? diameter : diameter[0]) / 2 - ((wall[0] == undef) ? wall : wall[0]),
-            r2=((diameter[0] == undef) ? diameter : diameter[1]) / 2 - ((wall[0] == undef) ? wall : wall[1])
+            r1=((diameter[0] == undef) ? diameter : diameter[0]) / 2
+                - secant * ((wall[0] == undef) ? wall : wall[0]),
+            r2=((diameter[0] == undef) ? diameter : diameter[1]) / 2
+                - secant * ((wall[0] == undef) ? wall : wall[1])
         );
     }
 }
@@ -43,11 +47,11 @@ module boussignac(
                 length=2 * wall
             );
         }
-        translate([0, 0, length - (outer_diameter - 2 * wall) * tan(angle) / 2 - wall]) {
+        translate([0, 0, length - (outer_diameter - 2 * wall) * tan(angle) / 4 - wall]) {
             tube(
-                diameter=[wall, outer_diameter - 4 * wall + 2 * channel],
-                length=(outer_diameter - 2 * wall) * tan(angle) / 2,
-                wall=channel
+                diameter=[inner_diameter, outer_diameter - 2 * wall],
+                length=(outer_diameter - 2 * wall) * tan(angle) / 4,
+                wall=[channel, wall]
             );
         }
         translate([0, -outer_diameter / 2 + 2 * wall, length / 2]) {
@@ -71,7 +75,5 @@ module boussignac(
 }
 
 mirror([0, 0, 1]) boussignac(outer_diameter = 30, inner_diameter = 15, wall = 1, angle = 45, length = 10, channel = 0.4);
-
-
-
+   
 
