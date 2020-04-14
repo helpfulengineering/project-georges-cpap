@@ -35,6 +35,7 @@
 * Support: only for the protruding tube.
 
 ## :vertical_traffic_light: [Project status](https://github.com/0x2b3bfa0/boussignac-cpap/projects/1)
+*Note: actually being tracked through [GitHub Projects](https://github.com/0x2b3bfa0/boussignac-cpap/projects/1)*; follow the link to get a better view of the project status.
 * [x] Design
 * [x] Prototyping
 * [ ] Calibration
