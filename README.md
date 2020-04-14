@@ -25,6 +25,7 @@
 > * Requires 75% less space in field packs than competitive systems
 > * Boussignac CPAP weighs only 10 grams, 2" long
 > * Permits CPAP without interruption during transport
+>
 > ![Boussignac CPAP](https://web.archive.org/web/20060212172040im_/http://vitaid.com/usa/boussignac/images/diag_011506.gif)
 
 ## :gear: Tested settings
