@@ -1,5 +1,5 @@
 # Boussignac CPAP
-3D printable Boussignac CPAP system with no moving parts. As per [one of the manufacturers](https://web.archive.org/web/20060212172040/http://vitaid.com/usa/boussignac/index.html), this system poses the following advantages.
+3D printable Boussignac CPAP system with no moving parts. As per [one of the manufacturers](https://web.archive.org/web/20060212172040/http://vitaid.com/usa/boussignac/index.html), this system poses the following advantages over traditional solutions:
 
 > #### Lowest O2 consumption rate of any CPAP system
 > * Only 15-30L/min flow rate for 3.5-10cmH2O
