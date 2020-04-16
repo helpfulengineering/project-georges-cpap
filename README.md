@@ -28,18 +28,17 @@
 >
 > ![Boussignac CPAP](https://web.archive.org/web/20060212172040im_/http://vitaid.com/usa/boussignac/images/diag_011506.gif)
 
-## :gear: Tested settings
+## :vertical_traffic_light: [Project status](https://github.com/0x2b3bfa0/boussignac-cpap/projects/1)
+*Note: actually being tracked through [GitHub Projects](https://github.com/0x2b3bfa0/boussignac-cpap/projects/1)*; follow the link to get a better view of the project status.
+* [x] **Design**
+* [x] [**Prototyping**](https://github.com/0x2b3bfa0/boussignac-cpap/issues/1)
+* [ ] Calibration
+
+## :gear: Manufacturing
 * Machine: Ender3 Pro
 * Nozzle size: 0.4 mm
 * Layer height: 0.28 mm
 * Support: only for the protruding tube.
-
-## :vertical_traffic_light: [Project status](https://github.com/0x2b3bfa0/boussignac-cpap/projects/1)
-*Note: actually being tracked through [GitHub Projects](https://github.com/0x2b3bfa0/boussignac-cpap/projects/1)*; follow the link to get a better view of the project status.
-* [x] Design
-* [x] Prototyping
-* [ ] Calibration
-
 
 ## :book: Bibliography
 * [http://vitaid.com/usa/boussignac/index.html](https://web.archive.org/web/20060212172040/http://vitaid.com/usa/boussignac/index.html)
