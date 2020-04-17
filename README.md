@@ -31,8 +31,8 @@
 ## :vertical_traffic_light: [Project status](https://github.com/0x2b3bfa0/boussignac-cpap/projects/1)
 *Note: actually being tracked through [GitHub Projects](https://github.com/0x2b3bfa0/boussignac-cpap/projects/1)*; follow the link to get a better view of the project status.
 * [x] **Design**
-* [x] [**Prototyping**](https://github.com/0x2b3bfa0/boussignac-cpap/issues/1)
-* [ ] Calibration
+* [x] **Prototyping**
+* [ ] [**Calibration**](https://github.com/0x2b3bfa0/boussignac-cpap/issues/1)
 
 ## :gear: Manufacturing
 * Machine: Ender3 Pro
