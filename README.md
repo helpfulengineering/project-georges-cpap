@@ -1,12 +1,12 @@
 # Boussignac CPAP
-3D printable Boussignac CPAP system with no moving parts. As per [one of the manufacturers](https://web.archive.org/web/20060212172040/http://vitaid.com/usa/boussignac/index.html), this system poses the following advantages over traditional solutions:
+3D printable Boussignac CPAP system with no moving parts. This system could pose the following advantages over traditional solutions:
 
 > #### Lowest O2 consumption rate of any CPAP system
 > * Only 15-30L/min flow rate for 3.5-10cmH2O
 >
 > #### System doesn't require a flow generator
 > * Eliminates investment in capital equipment and repair
-> * Boussignac CPAP only needs O2 source and flowmeter
+> * Only needs O2 source and flowmeter
 >
 > #### Only completely open CPAP system
 > * Eliminates re-breathing
@@ -23,24 +23,17 @@
 > #### Complete, easy to use, portable, single use system
 > * CPAP set up in <2 minutes, therefore ideal for all EMS and ED settings
 > * Requires 75% less space in field packs than competitive systems
-> * Boussignac CPAP weighs only 10 grams, 2" long
+> * Weighs only 10 grams, 2" long
 > * Permits CPAP without interruption during transport
->
-> ![Boussignac CPAP](https://web.archive.org/web/20060212172040im_/http://vitaid.com/usa/boussignac/images/diag_011506.gif)
 
-## :vertical_traffic_light: [Project status](https://github.com/0x2b3bfa0/boussignac-cpap/projects/1)
-*Note: actually being tracked through [GitHub Projects](https://github.com/0x2b3bfa0/boussignac-cpap/projects/1)*; follow the link to get a better view of the project status.
+## :vertical_traffic_light: [Project status](https://github.com/0x2b3bfa0/project-georges-cpap/projects/1)
+*Note: actually being tracked through [GitHub Projects](https://github.com/0x2b3bfa0/project-georges-cpap/projects/1)*; follow the link to get a better view of the project status.
 * [x] **Design**
 * [x] **Prototyping**
-* [ ] [**Calibration**](https://github.com/0x2b3bfa0/boussignac-cpap/issues/1)
+* [ ] [**Calibration**](https://github.com/0x2b3bfa0/project-georges-cpap/issues/1)
 
 ## :gear: Manufacturing
 * Machine: Ender3 Pro
 * Nozzle size: 0.4 mm
 * Layer height: 0.28 mm
 * Support: only for the protruding tube.
-
-## :book: Bibliography
-* [http://vitaid.com/usa/boussignac/index.html](https://web.archive.org/web/20060212172040/http://vitaid.com/usa/boussignac/index.html)
-* http://scielo.isciii.es/pdf/medinte/v35n5/nota2.pdf
-* https://blog.vygon.es/origen-cpap-boussignac/
