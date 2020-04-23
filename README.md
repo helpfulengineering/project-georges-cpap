@@ -1,5 +1,5 @@
-# Boussignac CPAP
-3D printable Boussignac CPAP system with no moving parts. This system could pose the following advantages over traditional solutions:
+# Georges CPAP
+3D printable CPAP system with no moving parts. This system could pose the following advantages over traditional solutions:
 
 > #### Lowest O2 consumption rate of any CPAP system
 > * Only 15-30L/min flow rate for 3.5-10cmH2O
