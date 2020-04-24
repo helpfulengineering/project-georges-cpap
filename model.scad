@@ -20,12 +20,14 @@ use <library/valves/georges.scad>;
 
 $fn=256;  // Face number: 256 for quality, 16 for speed.
 
+difference() {
+    union(){
 intersection(){
     georges(
         diameter=[15, 45],
         length=10,
         wall=1,
-        barb=[5, 15, 0.66],
+        barb=[5, 10, 0.66],
         channel=0.4,
         angle=40
     );
@@ -39,4 +41,7 @@ intersection(){
 union() {
     translate([0,0,10]) ISO5356_1(diameter=22, length=25, type="male");
     translate([0,0,10]) tube(diameter=21, length=25, wall=-3);
+}
+}
+translate([0,-100,0]) cube([100,100,100]);
 }

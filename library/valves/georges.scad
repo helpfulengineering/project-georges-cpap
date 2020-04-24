@@ -20,7 +20,7 @@ module georges(
     diameter=[15, 45],
     length=10,
     wall=1,
-    barb=[5, 15, 0.66],
+    barb=[5, 10, 0.66],
     channel=0.4,
     angle=40
 ) {
@@ -67,7 +67,7 @@ module georges(
             }
             translate([0, -diameter[1] / 2 + 2 * wall, length / 2]) {
                 rotate([90, 0, 0]) {
-                    barb(barb[0], barb[1], wall=barb[0] / 4, barb=barb[2]);
+                    barb(barb[0], barb[1], wall=barb[0] / 2, barb=barb[2]);
                 }
             }
         }
