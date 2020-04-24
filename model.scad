@@ -18,7 +18,7 @@ use <library/primitives/tube.scad>;
 use <library/connectors/conical/ISO5356_1.scad>;
 use <library/valves/georges.scad>;
 
-$fn=32;  // Face number: 128 for quality, 16 for speed.
+$fn=128;  // Face number: 128 for quality, 16 for speed.
 
 
 intersection(){
