@@ -20,7 +20,7 @@ module georges(
     diameter=[15, 45],
     length=10,
     wall=1,
-    barb=[5, 10, 0.66],
+    barb=[6, 10, 0.5],
     channel=0.4,
     angle=40
 ) {
