@@ -1,0 +1,20 @@
+#!/bin/bash
+set -euo pipefail
+
+time="$(date +%s)"
+folder="$(mktemp -d)"
+git log > "$folder/git.log"
+find . -type f -exec sha256sum {} \; > "$folder/files.sha256"
+mkdir "timestamp/signature-$time"
+tar -cf "timestamp/signature-$time/hashes.tar" -C "$folder" .
+rm -r "$folder"
+
+openssl ts -query -cert -sha256 -no_nonce \
+           -data "timestamp/signature-$time/hashes.tar" \
+           -out "timestamp/signature-$time/request.rfc3161"
+cat timestamp/servers.list | while read server; do 
+    name="$(echo "$server" | sed -e 's|^[^/]*//||' -e 's|/.*$||' -e 's/\(.*\.\)\(.*\)\..*$/\2/')"
+    curl -s -S -H 'Content-Type: application/timestamp-query' \
+         --data-binary @"timestamp/signature-$time/request.rfc3161" \
+         "$server" -o "timestamp/signature-$time/response-$name.rfc3161"
+done
