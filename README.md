@@ -1,5 +1,5 @@
 # Georges CPAP
-3D printable CPAP system with no moving parts.
+Plastic CPAP system with no moving parts.
 
 > #### Lowest O2 consumption rate of any CPAP system
 > * Only 15-30L/min flow rate for 3.5-10cmH2O
