@@ -26,7 +26,7 @@ module valve() {
           diameter=[15, 45],
           length=10,
           wall=1,
-          barb=[5, 30, 0.66, 20],
+          barb=[10, 30, 0.66, 20],
           channel=0.4,
           angle=40
       );
@@ -47,7 +47,8 @@ module valve() {
 
 module mask_body() {
     union() {
-      translate([-110,-101.9,34.99]) import("deps/MontanaMasks_top.stl");
+      // this doesn't seem to render well so I just joined it in the slicer
+      // translate([-110,-101.9,34.99]) import("deps/MontanaMasks_top.stl");
       translate([0,0,35]) rotate([0,180,180]) linear_extrude(35, convexity=10, scale=[0.6,0.6]) import("deps/MontanaMasks_adaptor_slice.svg", center=true);  
     }
     
@@ -57,17 +58,18 @@ module sliced_mask() {
     difference() {
         mask_body();
         translate([0,0,-0.05]) cylinder(10, d=44.99);
-        translate([0,0,-0.05]) cylinder(36, d=21.8);
-        translate([0,-15,5]) rotate([90,0,0]) cylinder(35, d=4.9);
+        translate([0,0,-0.05]) cylinder(38, d=21.8);
+        translate([0,-15,5]) rotate([90,0,0]) cylinder(35, d=9.9);
     }
 }
-sliced_mask();
-valve();
-// difference() {
-    
-//     translate([0,0,-0.05]) cylinder(10, d=44.99);
-//     translate([0,0,-0.05]) cylinder(35, d=21.8);
-//     translate([0,-15,5]) rotate([90,0,0]) cylinder(35, d=4.9);
-// }
 
-// translate([0,-15,5]) rotate([90,0,0]) cylinder(35, d=4.9);
+sliced_mask();
+
+difference() {
+  valve();
+  // cut off the bottom of the barb for ease of printing
+  translate([-20,-130,-3]) cube([100,100,3]);  
+  // translate([-30,-50,-3]) cube([30,50,100]);
+}
+
+
