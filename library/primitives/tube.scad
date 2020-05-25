@@ -82,10 +82,13 @@ module tube(diameter, length, wall) {
             r1=diameter_a / 2,
             r2=diameter_b / 2
         );
-        cylinder(
-            h=length,
-            r1=diameter_a / 2 - abs(wall_a),
-            r2=diameter_b / 2 - abs(wall_b)
-        );
+        translate([0,0,-0.1]) {
+            cylinder(
+                h=length + 0.2,
+                r1=diameter_a / 2 - abs(wall_a),
+                r2=diameter_b / 2 - abs(wall_b)
+            );
+        }
+        
     }
 }
