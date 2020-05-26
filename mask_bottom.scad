@@ -17,6 +17,7 @@
 use <library/primitives/tube.scad>;
 use <library/connectors/conical/ISO5356_1.scad>;
 use <library/valves/georges.scad>;
+use <library/connectors/hose/barb.scad>;
 
 $fn=128;  // Face number: 128 for quality, 16 for speed.
 
@@ -50,6 +51,7 @@ module mask_body() {
       // this doesn't seem to render well so I just joined it in the slicer
       // translate([-110,-101.9,34.99]) import("deps/MontanaMasks_top.stl");
       translate([0,0,35]) rotate([0,180,180]) linear_extrude(35, convexity=10, scale=[0.6,0.6]) import("deps/MontanaMasks_adaptor_slice.svg", center=true);  
+      translate([0, 27, 0]) cylinder(35, d=10);
     }
     
 }
@@ -60,16 +62,29 @@ module sliced_mask() {
         translate([0,0,-0.05]) cylinder(10, d=44.99);
         translate([0,0,-0.05]) cylinder(38, d=21.8);
         translate([0,-15,5]) rotate([90,0,0]) cylinder(35, d=9.9);
+        translate([0, 25, 1]) cylinder(35, d=5);
+        translate([0, 26, 3]) rotate([270,0,0]) cylinder(35, d1=5);
     }
 }
 
-sliced_mask();
+
+module complete_mask() {
+  sliced_mask();
+  valve();
+  difference() {
+    translate([0, 26, 3]) rotate([270,0,0]) barb(6.35, 20, clearance=10, wall=1, barb=0.5);
+    translate([0, 25, 1]) cylinder(35, d=5);
+  }
+}
+
+
 
 difference() {
-  valve();
+  complete_mask();
   // cut off the bottom of the barb for ease of printing
-  translate([-20,-130,-3]) cube([100,100,3]);  
-  // translate([-30,-50,-3]) cube([30,50,100]);
+  translate([0,0,-1.5]) cube([300,300,3], center=true); 
+
+  // translate([-30,00,-3]) cube([30,50,100]);
 }
 
 
