@@ -35,7 +35,9 @@ Plastic CPAP system with no moving parts.
 * Machine: Ender3 Pro
 * Nozzle size: 0.4 mm
 * Layer height: 0.28 mm
-* Support: only for the protruding tube.
+* Support: only for the protruding tubes.
+* Notes for the mask: use variable layer height to print the valve section at 0.15 mm, and the rest at 0.4 mm for speed.
+
 
 
 <!--
