@@ -20,7 +20,7 @@ module georges(
     diameter=[15, 45],
     length=10,
     wall=1,
-    barb=[6, 10, 0.66],
+    barb=[6, 10, 0.66, 5],
     channel=0.4,
     angle=40
 ) {
@@ -65,20 +65,26 @@ module georges(
                     wall=[-channel, -wall]
                 );
             }
-            translate([0, -diameter[1] / 2 + 2 * wall, length / 2]) {
-                rotate([90, 0, 0]) {
-                    barb(barb[0], barb[1], wall=barb[0] / 2, barb=barb[2]);
+            difference() {
+                translate([0, -diameter[1] / 2 + 2 * wall , length / 2]) {
+                    rotate([90, 0, 0]) {
+                        barb(barb[0], barb[1], wall=barb[0] / 2, barb=barb[2]);
+                    }
                 }
+                // preserve wall thickness at barb junction
+                translate([-barb[0]/2 - 0.1, -diameter[1] / 2 + 1 * wall - 2, length - wall]) cube([barb[0] + 0.2, barb[0], wall]);
+                translate([-barb[0]/2 - 0.1, -diameter[1] / 2 + 1 * wall - 2, 0]) cube([barb[0] + 0.2, barb[0], wall]);
             }
         }
+
         translate([0, -diameter[1] / 2 + wall, length / 2]) {
              rotate([90, 0, 0]) {
-                barb(barb[0], barb[1], wall=barb[0] / 8, barb=barb[2]);
+                barb(barb[0], barb[1], clearance=barb[3], wall=barb[0] / 8, barb=barb[2]);
             }
         }
         for(support = [0:12:360]) {
             rotate([0, 0, support]) {
-                translate([diameter[0] / 2 + wall, -wall, length - 3 * wall]) {
+                translate([diameter[0] / 2 + wall, -wall, length - 3 * wall - 0.1]) {
                     cube([
                         (diameter[1] - diameter[0]) / 2 - 2 * wall,
                         wall,
