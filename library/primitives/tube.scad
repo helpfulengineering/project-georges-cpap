@@ -14,7 +14,7 @@
  * description of the applicable conditions.
  */
 
-module tube(diameter, length, wall) {
+module tube(diameter, length, wall, $fn=($fn) ? $fn : 16) {
     /// Creates a tube or a tapered tube.
     ///
     /// ## Arguments
@@ -76,19 +76,18 @@ module tube(diameter, length, wall) {
         "diameter must not be zero"
     );
 
-    difference() {
-        cylinder(
-            h=length,
-            r1=diameter_a / 2,
-            r2=diameter_b / 2
-        );
-        translate([0,0,-0.1]) {
+    intersection() {
+        difference() {
             cylinder(
-                h=length + 0.2,
+                h=length,
+                r1=diameter_a / 2,
+                r2=diameter_b / 2
+            );
+            cylinder(
+                h=length,
                 r1=diameter_a / 2 - abs(wall_a),
                 r2=diameter_b / 2 - abs(wall_b)
             );
         }
-        
     }
 }
