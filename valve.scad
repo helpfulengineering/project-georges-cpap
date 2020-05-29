@@ -23,14 +23,14 @@ $fn=128;  // Face number: 128 for quality, 16 for speed.
 
 intersection(){
     georges(
-        diameter=[15, 45],
-        length=10,
-        wall=1,
-        barb=[5, 10, 0.66],
+        diameter=[35, 15],
+        length=12,
+        wall=2,
+        barb=[6, 10, 0.66, 5],
         channel=0.4,
-        angle=40
+        angle=22.5
     );
-    translate([0,0,10]) {
+    translate([0, 0, 12]) {
         mirror([0, 0, 1]) {
             ISO5356_1(diameter=15, type="female", wall=45);
         }
@@ -38,8 +38,6 @@ intersection(){
 }
 
 union() {
-    translate([0,0,10]) ISO5356_1(diameter=22, length=25, type="male");
-    translate([0,0,10]) tube(diameter=21, length=25, wall=-2.9);
+    translate([0, 0, 12]) ISO5356_1(diameter=22, length=25, type="male");
+    translate([0, 0, 12]) tube(diameter=21, length=25, wall=-2.9);
 }
-
-
