@@ -18,26 +18,35 @@ use <library/primitives/tube.scad>;
 use <library/connectors/conical/ISO5356_1.scad>;
 use <library/valves/georges.scad>;
 
-$fn=128;  // Face number: 128 for quality, 16 for speed.
+$fn=400;  // Face number: 128 for quality, 16 for speed.
 
+difference() {
+    union() {
+        intersection(){
+            georges(
+                diameter=[30, 10],
+                length=15,
+                wall=2,
+                barb=[6, 15, 0.66, 10],
+                channel=0.3,
+                angle=40
+            );
+            // translate([0, 0, 12]) {
+            //     mirror([0, 0, 1]) {
+            //         ISO5356_1(diameter=15, type="female", wall=45);
+            //     }
+            // }
+        }
 
-intersection(){
-    georges(
-        diameter=[35, 15],
-        length=12,
-        wall=2,
-        barb=[6, 10, 0.66, 5],
-        channel=0.4,
-        angle=22.5
-    );
-    translate([0, 0, 12]) {
-        mirror([0, 0, 1]) {
-            ISO5356_1(diameter=15, type="female", wall=45);
+        translate([0, 0, 15]) union() {
+            ISO5356_1(diameter=22, length=25, type="male");
+            // difference() {
+            //     cylinder(10, d=21);
+            //     cylinder(10, d1=10,d2=21);
+            // }
+            // translate([0, 0, 17]) tube(diameter=22, length=25, wall=-6);
         }
     }
-}
 
-union() {
-    translate([0, 0, 12]) ISO5356_1(diameter=22, length=25, type="male");
-    translate([0, 0, 12]) tube(diameter=21, length=25, wall=-2.9);
+    translate([0, -50, 0]) cube([100,100,100]);
 }
