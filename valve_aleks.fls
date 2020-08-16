@@ -1,5 +1,0 @@
-PWD /home/aleks/data/work/project-georges-cpap
-INPUT /usr/share/texmf-dist/web2c/texmf.cnf
-INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
-INPUT /home/aleks/data/work/project-georges-cpap/valve_aleks.scad
-OUTPUT /home/aleks/data/work/project-georges-cpap/valve_aleks.log
