@@ -32,11 +32,19 @@ Plastic CPAP system with no moving parts.
 * [ ] [**Calibration**](https://github.com/0x2b3bfa0/project-georges-cpap/issues/1)
 
 ## :gear: Manufacturing
+
+### Mask Body
 * Machine: Ender3 Pro
 * Nozzle size: 0.4 mm
 * Layer height: 0.28 mm
 * Support: only for the protruding tubes.
 * Notes for the mask: use variable layer height to print the valve section at 0.15 mm, and the rest at 0.4 mm for speed.
+
+### Valve
+* Machine: Anycubic Photon S
+* Exposure: 3s
+* Resin: basic
+
 
 
 
