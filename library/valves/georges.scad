@@ -17,12 +17,12 @@
 use <../../library/primitives/tube.scad>;
 use <../../library/connectors/hose/barb.scad>;
 module georges(
-    diameter=[15, 45],
-    length=10,
-    wall=1,
+    diameter=[35, 15],
+    length=12,
+    wall=2,
     barb=[6, 10, 0.66, 5],
     channel=0.4,
-    angle=40
+    angle=22.5
 ) {
     /// Creates a Georges CPAP virtual valve.
     ///
@@ -37,61 +37,34 @@ module georges(
     /// ```
     /// georges();
     /// ```
-    translate([0, 0, length]) mirror([0, 0, 1]) {
-        difference() {
-            cylinder(r=diameter[1] / 2, h=length);
-            cylinder(r=diameter[0] / 2, h=length);
-            translate([0, 0, wall]) {
-                tube(
-                    wall=-wall,
-                    diameter=diameter[1] - 2 * wall,
-                    length=length - 2 * wall
-                );
-            }
-            translate([0, 0, length - 3 * wall]) {
-                tube(
-                    wall=-(2 * wall + channel),
-                    diameter=diameter[1] - 2 * wall,
-                    length=2 * wall
-                );
-            }
-            translate([
-                0, 0,
-                length - (diameter[1] - 2 * wall) * tan(angle) / 4 - wall
-            ]) {
-                tube(
-                    diameter=[diameter[0], diameter[1] - 2 * wall],
-                    length=(diameter[1] - 2 * wall) * tan(angle) / 4,
-                    wall=[-channel, -wall]
-                );
-            }
-            difference() {
-                translate([0, -diameter[1] / 2 + 2 * wall , length / 2]) {
-                    rotate([90, 0, 0]) {
-                        barb(barb[0], barb[1], wall=barb[0] / 2, barb=barb[2]);
-                    }
-                }
-                // preserve wall thickness at barb junction
-                translate([-barb[0]/2 - 0.1, -diameter[1] / 2 + 1 * wall - 2, length - wall]) cube([barb[0] + 0.2, barb[0], wall]);
-                translate([-barb[0]/2 - 0.1, -diameter[1] / 2 + 1 * wall - 2, 0]) cube([barb[0] + 0.2, barb[0], wall]);
-            }
-        }
+    secant = sqrt(pow(tan(angle), 2) + 1) / tan(angle);
+    chamber = (diameter[0] - diameter[1]) / 2 - 2 * wall;
 
-        translate([0, -diameter[1] / 2 + wall, length / 2]) {
-             rotate([90, 0, 0]) {
-                barb(barb[0], barb[1], clearance=barb[3], wall=barb[0] / 8, barb=barb[2]);
+    difference() {
+        tube(
+            diameter=diameter[0],
+            length=length,
+            wall=(diameter[1] - diameter[0]) / 2
+        );
+        translate([0, 0, wall]) {
+            tube(
+                diameter=diameter[0] - 2 * wall,
+                length=chamber,
+                wall=-[chamber,  2 * channel * secant]
+            );
+            translate([0, 0, chamber]) {
+                tube(
+                    diameter=[diameter[0] - 2 * wall, diameter[1]],
+                    length=(chamber + wall) * tan(angle),
+                    wall=-[2 * channel, channel]
+                );
             }
         }
-        for(support = [0:12:360]) {
-            rotate([0, 0, support]) {
-                translate([diameter[0] / 2 + wall, -wall, length - 3 * wall - 0.1]) {
-                    cube([
-                        (diameter[1] - diameter[0]) / 2 - 2 * wall,
-                        wall,
-                        2 * wall + channel
-                    ]);
-                }
-            }
+        translate([0, 2 * wall - diameter[0] / 2, barb[0] / 2 + barb[2]]) rotate([90, 0, 0]) {
+            tube(barb[0] + 2 * barb[2] - 2 * wall, barb[1], -(barb[0] / 2 + barb[2] - wall));
         }
+    }
+    translate([0, wall - diameter[0] / 2, barb[0] / 2 + barb[2]]) rotate([90, 0, 0]) {
+        barb(barb[0], barb[1], wall=wall - barb[2], barb=barb[2], clearance=barb[3]);
     }
 }

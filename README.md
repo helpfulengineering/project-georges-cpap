@@ -32,12 +32,23 @@ Plastic CPAP system with no moving parts.
 * [ ] [**Calibration**](https://github.com/0x2b3bfa0/project-georges-cpap/issues/1)
 
 ## :gear: Manufacturing
+
+### Mask Body
 * Machine: Ender3 Pro
 * Nozzle size: 0.4 mm
 * Layer height: 0.28 mm
 * Support: only for the protruding tubes.
 * Notes for the mask: use variable layer height to print the valve section at 0.15 mm, and the rest at 0.4 mm for speed.
 
+### Valve
+* Machine: Anycubic Photon S
+* Exposure: 3s
+* Resin: basic
+
+### Notes
+
+* We're using the Montana Mask as the basis, but @aleksclark is terrible at freecad, so if you have to tweak the mask parameters, you'll need to trim off the excess of the strap anchors using the defeaturing tool
+* It should be possible to add a biofilter to this design, see above for why it's not done yet
 
 
 <!--
