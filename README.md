@@ -45,7 +45,10 @@ Plastic CPAP system with no moving parts.
 * Exposure: 3s
 * Resin: basic
 
+### Notes
 
+* We're using the Montana Mask as the basis, but @aleksclark is terrible at freecad, so if you have to tweak the mask parameters, you'll need to trim off the excess of the strap anchors using the defeaturing tool
+* It should be possible to add a biofilter to this design, see above for why it's not done yet
 
 
 <!--
