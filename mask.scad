@@ -25,25 +25,14 @@ $fn=128;  // Face number: 128 for quality, 16 for speed.
 
 
 module valve() {
-    intersection(){
-        georges(
-            diameter=[15, 45],
-            length=10,
-            wall=1,
-            barb=[10, 30, 0.66, 20],
-            channel=0.4,
-            angle=40
-        );
-        translate([0, 0, 10]) {
-            mirror([0, 0, 1]) {
-                ISO5356_1(diameter=15, type="female", wall=45);
-            }
-        }
-    }
-    union() {
-        translate([0, 0, 10]) ISO5356_1(diameter=22, length=25, type="male");
-        translate([0, 0, 10]) tube(diameter=21, length=25, wall=-2.9);
-    }  
+    georges(
+        diameter=[40, 15],
+        length=18,
+        wall=2,
+        barb=[10, 30, 0.66, 20],
+        channel=0.4,
+        angle=35
+    );
 }
 
 
@@ -55,30 +44,29 @@ module mask() {
                 translate([-50, -50, -65]) cube([100, 100, 100]);
             }
             translate([0, 0, 35]) rotate([0, 180, 180]) {
-                linear_extrude(35, convexity=10, scale=[0.6, 0.6]) {
+                linear_extrude(35, convexity=10, scale=[0.6, 0.64]) {
                     import("library/masks/montana/adaptor.svg", center=true);  
                 }
             }
         }
-        translate([0, 0, -0.05]) cylinder(10, d=44.99);
-        translate([0, 0, -0.05]) cylinder(38, d=21.8);
-        translate([0, -15, 5]) rotate([90, 0, 0]) cylinder(35, d=9.9);
-        translate([0, 25, 1]) cylinder(35, d=5);
-        translate([0, 26, 3]) rotate([270, 0, 0]) cylinder(35, d1=5);
+        cylinder(18, d=40);
+        cylinder(38, d=15);
+        translate([0, -15, 5.66]) rotate([90, 0, 0]) cylinder(35, d=10);
+        translate([0, 25, 2]) cylinder(35, d=5);
+        translate([0, 26, 4]) rotate([270, 0, 0]) cylinder(35, d1=5);
     }
 }
+
 
 difference() {
     union() {
         mask();
         valve();
         difference() {
-            translate([0, 26, 3]) rotate([270,0,0]) barb(6.35, 20, clearance=10, wall=1, barb=0.5);
-            translate([0, 25, 1]) cylinder(35, d=5);
+            translate([0, 26, 4]) rotate([270,0,0]) barb(6.35, 20, clearance=10, wall=1.2, barb=0.5);
+            translate([0, 25, 2]) cylinder(35, d=5);
         }
     }
     // cut off the bottom of the barb for ease of printing
-    translate([0, 0, -1.5]) cube([50, 150, 3], center=true);
+    translate([0, -50, -1.5]) cube([50, 150, 100]);
 }
-
-
