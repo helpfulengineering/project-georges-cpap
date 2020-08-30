@@ -22,8 +22,8 @@ title: Georges CPAP
 email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   This fully printable device with no moving parts is able to provide a continuous positive pressure to a patient's airways while letting them breathe freely.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/project-georges-cpap" # the subpath of your site, e.g. /blog
+url: "https://helpfulengineering.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  jekyll
 lang: en
