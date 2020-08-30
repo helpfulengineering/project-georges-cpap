@@ -6,4 +6,4 @@ DISCLAIMER: THIS IS NOT A MEDICAL DEVICE. These designs and documents are for ex
 
 This fully printable device with no moving parts is able to provide a continuous positive pressure to a patient's airways while letting them breathe freely.
 
-![My helpful screenshot](/docs/assets/complete_ortho.png)
+![My helpful screenshot](/assets/complete_ortho.png)
