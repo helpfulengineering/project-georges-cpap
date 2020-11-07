@@ -12,7 +12,8 @@ Standard air compressors have a much higher flow rate than medical equipment, so
 
 ## Testing the valve
 
-A video demonstrating testing [can be found here. TURN DOWN YOUR VOLUME](https://youtu.be/-pk_lfGOONA)
+A video demonstrating testing is included below. TURN DOWN YOUR VOLUME
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-pk_lfGOONA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Connect a soda bottle to your manometer via any means available, and insert the valve into the mouth of the soda bottle. Some teflon tape may be necessary to achieve a good seal.
 

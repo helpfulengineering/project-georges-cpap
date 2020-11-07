@@ -13,7 +13,9 @@ This design provides a 3d-printable CPAP mask that can be manufactured in areas 
 
 This device is not suitable for mass-manufacture, entities with the resources and logistics necessary should purchase either commercial electronic BiPAP or CPAP machines, or the Boussignac CPAP produced by [VYGON](https://www.vygon.com/).
 
-A very rudimentary instructional video in Spanish is available [on youtube](https://www.youtube.com/watch?v=moMq4IQBIsA)
+## Rudimentary Spanish Instructional Video
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/moMq4IQBIsA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 ## Files
