@@ -1,6 +1,9 @@
 # Georges CPAP
 Plastic CPAP system with no moving parts.
 
+# [Current Documentation](https://helpfulengineering.github.io/project-georges-cpap/)
+Files in this repository are mainly for archival purposes + documentation. Source files are available (here)[https://cad.onshape.com/documents/fcc843822e3f2cb218bbe91c/w/738c68d83bd9079113df055c/e/e5dcf7b0527b1f57e8a51f64?configuration=barb_id%3D0.003%2Bmeter%3Bchamber_width%3D0.003%2Bmeter%3Begress%3D4.0E-4%2Bmeter%3Bpatient_channel_diameter%3D0.005%2Bmeter%3Btext_depth%3D3.0E-4%2Bmeter%3Bwall_thickness%3D0.002%2Bmeter]
+
 > #### Lowest O2 consumption rate of any CPAP system
 > * Only 15-30L/min flow rate for 3.5-10cmH2O
 >
