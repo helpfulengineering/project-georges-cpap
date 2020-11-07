@@ -13,6 +13,9 @@ This design provides a 3d-printable CPAP mask that can be manufactured in areas 
 
 This device is not suitable for mass-manufacture, entities with the resources and logistics necessary should purchase either commercial electronic BiPAP or CPAP machines, or the Boussignac CPAP produced by [VYGON](https://www.vygon.com/).
 
+A very rudimentary instructional video in Spanish is available [on youtube](https://www.youtube.com/watch?v=moMq4IQBIsA)
+
+
 ## Files
 
 Source files have all been generated in OnShape, as a public document. The source files may be found [here](https://cad.onshape.com/documents/fcc843822e3f2cb218bbe91c/w/738c68d83bd9079113df055c/e/e5dcf7b0527b1f57e8a51f64?configuration=barb_id%3D0.003%2Bmeter%3Bchamber_width%3D0.003%2Bmeter%3Begress%3D4.0E-4%2Bmeter%3Bpatient_channel_diameter%3D0.010%2Bmeter%3Btext_depth%3D3.0E-4%2Bmeter%3Bwall_thickness%3D0.002%2Bmeter). The design is parametric, so you may desire to tune the values to achieve different goals. The main parameter that users will want to tune is 'patient channel diameter', but the 'egress' parameter may also be tuned to account for differences in SLA exposure, resins, and finishing processes.
